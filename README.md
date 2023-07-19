@@ -1,6 +1,6 @@
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Desafío FullStack
 
 ## Installation
 
@@ -21,29 +21,25 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Test artillery 
 
+you need to run the next command in the root
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+$ artillery run iacc-load-test.yml  
 ```
 
-## Support
+## Curl command
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+add a alumno to a curso
+```bash
+$ curl --location --request PUT 'localhost:3003/cursos/1/alumnos/1'
+```
+get a alumno by id
+```bash
+$ curl --location --request GET 'localhost:3003/alumnos/1'
+```
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+get all the alumnos from a curso
+```bash
+$ curl --location --request GET 'localhost:3003/cursos/1/alumnos'
+```
